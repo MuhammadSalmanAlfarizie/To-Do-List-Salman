@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 5px solid #14213d;
+    animation: muncul 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #14213d;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #b8c1d1;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #14213d;
+}
+
+#addButton {
+    padding: 10px 20px;
+    background-color: #14213d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#addButton:hover {
+    background-color: #1f335b;
+}
+
+/* Daftar tugas */
+#taskList {
+    list-style: none;
+    margin-top: 20px;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #d5dbe5;
+    border-radius: 5px;
+    background-color: #f8f9fb;
+
+    animation: tugasMasuk 0.3s ease;
+    transition: transform 0.2s ease;
+}
+
+/* Blok tugas sedikit membesar saat diarahkan */
+#taskList li:hover {
+    transform: scale(1.02);
+}
+
+#taskList li span {
+    flex: 1;
+    color: #222;
+}
+
+/* Checkbox */
+#taskList input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #14213d;
+    cursor: pointer;
+}
+
+/* Tugas selesai */
+.completed {
+    text-decoration: line-through;
+    color: #777 !important;
+}
+
+/* Tombol hapus */
+#taskList button {
+    padding: 6px 10px;
+    background-color: #14213d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#taskList button:hover {
+    background-color: #1f335b;
+}
+
+/* Statistik */
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #d5dbe5;
+    text-align: center;
+}
+
+.statistics div {
+    flex: 1;
+}
+
+.statistics span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #14213d;
+}
+
+.statistics p {
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Animasi container saat halaman dibuka */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi tugas saat ditambahkan */
+@keyframes tugasMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
